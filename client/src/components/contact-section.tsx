@@ -64,22 +64,22 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Address",
-      content: "123 Creative Street, Design District, NY 10001"
+      content: "Township lahore"
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567"
+      content: "+92 323 3566 997"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "hello@creativeflow.agency"
+      content: "zentixpk@gmail.com"
     },
     {
       icon: Clock,
       title: "Working Hours",
-      content: "Mon - Fri: 9:00 AM - 6:00 PM EST"
+      content: "Mon - Fri: 2:00 PM - 12:00 AM"
     }
   ];
 

@@ -1,9 +1,9 @@
 const AboutSection = () => {
   const stats = [
-    { value: "150+", label: "Projects" },
-    { value: "50+", label: "Clients" },
-    { value: "5+", label: "Years" },
-    { value: "98%", label: "Satisfaction" }
+    { value: "5+", label: "Projects" },
+    { value: "20+", label: "Clients" },
+    { value: "2+", label: "Years" },
+    { value: "94%", label: "Satisfaction" }
   ];
 
   return (
@@ -12,10 +12,10 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-brand-gold">About</span> <span className="text-white">CreativeFlow</span>
+              <span className="text-brand-gold">About</span> <span className="text-white">Zentix</span>
             </h2>
             <p className="text-lg text-gray-300 mb-6">
-              We are a passionate team of digital creatives, strategists, and developers dedicated to transforming brands through innovative digital solutions. With over 5 years of experience, we've helped hundreds of businesses establish their digital presence and achieve remarkable growth.
+              We are a passionate team of digital creatives, strategists, and developers dedicated to transforming brands through innovative digital solutions. With over 2 years of experience, we've helped dozens of businesses establish their digital presence and achieve remarkable growth.
             </p>
             <p className="text-lg text-gray-300 mb-8">
               Our approach combines creative excellence with data-driven strategies, ensuring every project not only looks exceptional but delivers measurable results for our clients.

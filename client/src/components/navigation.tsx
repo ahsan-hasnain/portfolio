@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo  from "./logo 4.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,10 +37,14 @@ const Navigation = () => {
       scrolled ? "bg-brand-black/95 backdrop-blur-sm border-b border-brand-gray" : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-brand-gold">
-            CreativeFlow
-          </div>
+<div className="flex items-center justify-between nav-container">
+  <div className=" h-20 w-32 flex items-center justify-center ">
+    <img
+      src={logo}
+      alt="Logo"
+      className=" h-full w-auto object-contain scale-125 "
+    />
+  </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

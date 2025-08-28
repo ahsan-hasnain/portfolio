@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Agency - Digital Solutions & Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#0A0A0A',
+                        'brand-brown': '#8B4513',
+                        'brand-brown-light': '#D2691E',
+                        'brand-gold': '#F59E0B',
+                        'brand-gray': '#1F1F1F',
+                        'brand-gray-light': '#2D2D2D'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(139, 69, 19, 0.6) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-inter bg-brand-black text-white">
+
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-black/95 backdrop-blur-sm border-b border-brand-gray">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-brand-gold">
+                    <span data-mock="true">CreativeFlow</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-brand-gold transition-colors">Home</a>
+                    <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                    <a href="#portfolio" class="hover:text-brand-gold transition-colors">Portfolio</a>
+                    <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                    <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden bg-brand-gray" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block hover:text-brand-gold transition-colors">Home</a>
+                <a href="#services" class="block hover:text-brand-gold transition-colors">Services</a>
+                <a href="#portfolio" class="block hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#about" class="block hover:text-brand-gold transition-colors">About</a>
+                <a href="#contact" class="block hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center">
+        <!-- Modern agency office space with creative professionals collaborating -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" alt="Modern creative agency office" class="w-full h-full object-cover" data-mock-image="true">
+            <div class="gradient-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative container mx-auto px-6 z-10">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span class="text-white" data-mock="true">Creative Solutions</span><br>
+                    <span class="text-brand-gold" data-mock="true">Digital Excellence</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl" data-mock="true">
+                    We craft exceptional digital experiences through social media management, web development, stunning infographics, and professional video editing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-brand-gold text-brand-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors" data-event="click:scrollToServices">
+                        Explore Our Services
+                    </button>
+                    <button class="border-2 border-brand-brown text-white px-8 py-4 rounded-lg font-semibold hover:bg-brand-brown transition-colors" data-event="click:scrollToPortfolio">
+                        View Our Work
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-brand-gold" data-mock="true">Our</span> <span class="text-white" data-mock="true">Services</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-mock="true">
+                    Comprehensive digital solutions tailored to elevate your brand and drive meaningful engagement across all platforms.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1: Social Media Management -->
+                <div class="service-card bg-brand-gray-light p-8 rounded-xl hover:bg-brand-brown transition-all duration-300 cursor-pointer">
+                    <!-- Dynamic social media management team brainstorming campaign ideas -->
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Social media management team" class="w-full h-48 object-cover rounded-lg" data-mock-image="true">
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-share-alt text-3xl text-brand-gold mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4" data-mock="true">Social Media Management</h3>
+                        <p class="text-gray-300 text-sm" data-mock="true">Strategic content creation, community engagement, and brand growth across all major social platforms.</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2: Web Development -->
+                <div class="service-card bg-brand-gray-light p-8 rounded-xl hover:bg-brand-brown transition-all duration-300 cursor-pointer">
+                    <!-- Professional web development workspace with multiple monitors showing code -->
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Web development workspace" class="w-full h-48 object-cover rounded-lg" data-mock-image="true">
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-code text-3xl text-brand-gold mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4" data-mock="true">Web Development</h3>
+                        <p class="text-gray-300 text-sm" data-mock="true">Custom websites and web applications built with cutting-edge technologies and responsive design.</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3: Infographics -->
+                <div class="service-card bg-brand-gray-light p-8 rounded-xl hover:bg-brand-brown transition-all duration-300 cursor-pointer">
+                    <!-- Creative infographic design examples displayed on a designer's desk -->
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Infographic design examples" class="w-full h-48 object-cover rounded-lg" data-mock-image="true">
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-chart-pie text-3xl text-brand-gold mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4" data-mock="true">Infographics</h3>
+                        <p class="text-gray-300 text-sm" data-mock="true">Data visualization and information design that transforms complex data into compelling visual stories.</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4: Video Editing -->
+                <div class="service-card bg-brand-gray-light p-8 rounded-xl hover:bg-brand-brown transition-all duration-300 cursor-pointer">
+                    <!-- Professional video editing setup with multiple monitors and editing timeline -->
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Video editing setup" class="w-full h-48 object-cover rounded-lg" data-mock-image="true">
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-video text-3xl text-brand-gold mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4" data-mock="true">Video Editing</h3>
+                        <p class="text-gray-300 text-sm" data-mock="true">Professional video production and post-production services for marketing, corporate, and creative content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-brand-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white" data-mock="true">Featured</span> <span class="text-brand-gold" data-mock="true">Work</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-mock="true">
+                    Explore our diverse portfolio showcasing successful campaigns, innovative web solutions, and creative content across various industries.
+                </p>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: portfolioItems.map(item => ( -->
+                
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- E-commerce fashion website design with modern layout and shopping features -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="E-commerce website design" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Fashion E-commerce</h4>
+                            <p class="text-sm mb-4" data-mock="true">Web Development</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- Modern restaurant social media campaign with food photography and branding -->
+                    <img src="https://images.unsplash.com/photo-1611348586804-61bf6c080437?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Restaurant social media campaign" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Restaurant Campaign</h4>
+                            <p class="text-sm mb-4" data-mock="true">Social Media</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- Creative data visualization infographic showing business growth metrics -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Data visualization infographic" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Growth Analytics</h4>
+                            <p class="text-sm mb-4" data-mock="true">Infographics</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- Corporate promotional video production with professional lighting and equipment -->
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Corporate video production" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Corporate Video</h4>
+                            <p class="text-sm mb-4" data-mock="true">Video Editing</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- Tech startup website with innovative design and user interface elements -->
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Tech startup website" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Tech Platform</h4>
+                            <p class="text-sm mb-4" data-mock="true">Web Development</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item relative group cursor-pointer">
+                    <!-- Healthcare infographic showing patient care statistics and medical data -->
+                    <img src="https://pixabay.com/get/g9f8b5f2c7ad36097d0f630e032d18f4da85bc1ad1e552bf2764a8d3b7490041163d150e0315a0bb68d79b393a4f3f99ae84b5c7664034ac8324d7d35429c19c8_1280.jpg" alt="Healthcare infographic design" class="w-full h-64 object-cover rounded-lg" data-mock-image="true">
+                    <div class="portfolio-overlay absolute inset-0 bg-brand-brown/90 opacity-0 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <h4 class="text-xl font-semibold mb-2" data-mock="true">Healthcare Data</h4>
+                            <p class="text-sm mb-4" data-mock="true">Infographics</p>
+                            <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-lg text-sm font-semibold">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Portfolio Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                        <span class="text-brand-gold" data-mock="true">About</span> <span class="text-white" data-mock="true">CreativeFlow</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-6" data-mock="true">
+                        We are a passionate team of digital creatives, strategists, and developers dedicated to transforming brands through innovative digital solutions. With over 5 years of experience, we've helped hundreds of businesses establish their digital presence and achieve remarkable growth.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8" data-mock="true">
+                        Our approach combines creative excellence with data-driven strategies, ensuring every project not only looks exceptional but delivers measurable results for our clients.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-gold" data-mock="true">150+</div>
+                            <div class="text-sm text-gray-400" data-mock="true">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-gold" data-mock="true">50+</div>
+                            <div class="text-sm text-gray-400" data-mock="true">Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-gold" data-mock="true">5+</div>
+                            <div class="text-sm text-gray-400" data-mock="true">Years</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-gold" data-mock="true">98%</div>
+                            <div class="text-sm text-gray-400" data-mock="true">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Diverse creative team collaborating in a modern office environment -->
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Creative team collaboration" class="rounded-xl shadow-2xl w-full" data-mock-image="true">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-brand-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white" data-mock="true">Let's</span> <span class="text-brand-gold" data-mock="true">Connect</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-mock="true">
+                    Ready to elevate your digital presence? Get in touch with us to discuss your project and discover how we can bring your vision to life.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-brand-gold" data-mock="true">Get In Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-brand-brown p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" data-mock="true">Address</h4>
+                                <p class="text-gray-300" data-mock="true">123 Creative Street, Design District, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-brand-brown p-3 rounded-lg">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" data-mock="true">Phone</h4>
+                                <p class="text-gray-300" data-mock="true">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-brand-brown p-3 rounded-lg">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" data-mock="true">Email</h4>
+                                <p class="text-gray-300" data-mock="true">hello@creativeflow.agency</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-brand-brown p-3 rounded-lg">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" data-mock="true">Working Hours</h4>
+                                <p class="text-gray-300" data-mock="true">Mon - Fri: 9:00 AM - 6:00 PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4" data-mock="true">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-brand-gray-light p-3 rounded-lg hover:bg-brand-brown transition-colors">
+                                <i class="fab fa-facebook text-white"></i>
+                            </a>
+                            <a href="#" class="bg-brand-gray-light p-3 rounded-lg hover:bg-brand-brown transition-colors">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="bg-brand-gray-light p-3 rounded-lg hover:bg-brand-brown transition-colors">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="bg-brand-gray-light p-3 rounded-lg hover:bg-brand-brown transition-colors">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-brand-gray p-8 rounded-xl">
+                    <form class="space-y-6" data-implementation="Should validate form before submission and integrate with contact API">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" data-mock="true">First Name *</label>
+                                <input type="text" class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none" placeholder="John" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" data-mock="true">Last Name *</label>
+                                <input type="text" class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none" placeholder="Doe" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" data-mock="true">Email *</label>
+                            <input type="email" class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none" placeholder="john.doe@example.com" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" data-mock="true">Service Interest</label>
+                            <select class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none">
+                                <option data-mock="true">Select a service...</option>
+                                <option data-mock="true">Social Media Management</option>
+                                <option data-mock="true">Web Development</option>
+                                <option data-mock="true">Infographics</option>
+                                <option data-mock="true">Video Editing</option>
+                                <option data-mock="true">Full Package</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" data-mock="true">Budget Range</label>
+                            <select class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none">
+                                <option data-mock="true">Select budget range...</option>
+                                <option data-mock="true">$5,000 - $10,000</option>
+                                <option data-mock="true">$10,000 - $25,000</option>
+                                <option data-mock="true">$25,000 - $50,000</option>
+                                <option data-mock="true">$50,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" data-mock="true">Project Details *</label>
+                            <textarea rows="5" class="w-full px-4 py-3 bg-brand-gray-light text-white rounded-lg border border-transparent focus:border-brand-gold focus:outline-none resize-none" placeholder="Tell us about your project goals, timeline, and any specific requirements..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-brand-gold text-brand-black py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors" data-event="click:handleSubmit">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-brand-black border-t border-brand-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-brand-gold mb-4" data-mock="true">
+                        CreativeFlow
+                    </div>
+                    <p class="text-gray-400 text-sm" data-mock="true">
+                        Transforming brands through innovative digital solutions and creative excellence.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-mock="true">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Social Media Management</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Web Development</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Infographics</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Video Editing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-mock="true">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-mock="true">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4" data-mock="true">Stay updated with our latest projects and insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 bg-brand-gray text-white rounded-l-lg border border-transparent focus:border-brand-gold focus:outline-none text-sm" data-mock="true">
+                        <button class="bg-brand-gold text-brand-black px-4 py-2 rounded-r-lg hover:bg-yellow-500 transition-colors">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-gray pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm" data-mock="true">
+                    © 2024 CreativeFlow Agency. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
+                    <a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Terms of Service</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors" data-mock="true">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                });
+            }
+            
+            // Newsletter subscription
+            const newsletterForm = document.querySelector('footer input[type="email"]');
+            const newsletterBtn = document.querySelector('footer button');
+            if (newsletterForm && newsletterBtn) {
+                newsletterBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement newsletter subscription logic
+                    if (newsletterForm.value) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        newsletterForm.value = '';
+                    }
+                });
+            }
+            
+            // Scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Apply fade-in animation to sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        })();
+    </script>
+
+</body>
+</html>

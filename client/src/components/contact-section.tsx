@@ -74,7 +74,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "zentixpk@gmail.com"
+      content: "ahsan@zentix.digital"
     },
     {
       icon: Clock,
@@ -84,10 +84,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
+    { icon: Facebook, href: "https://www.facebook.com/share/1CkuCqNaSL/", label: "Facebook" },
+    /* { icon: Twitter, href: "#", label: "Twitter" }, */
+    { icon: Instagram, href: "https://www.instagram.com/zentix_pk?igsh=b2RubGVjc2pydnJj&utm_source=qr", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/zentix-pk-035645371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" }
   ];
 
   return (
@@ -195,7 +195,7 @@ const ContactSection = () => {
                     <SelectContent className="bg-brand-gray-light border-brand-gray">
                       <SelectItem value="social-media">Social Media Management</SelectItem>
                       <SelectItem value="web-development">Web Development</SelectItem>
-                      <SelectItem value="infographics">Infographics</SelectItem>
+                      <SelectItem value="infographics">Visual Branding</SelectItem>
                       <SelectItem value="video-editing">Video Editing</SelectItem>
                       <SelectItem value="full-package">Full Package</SelectItem>
                     </SelectContent>
@@ -209,10 +209,10 @@ const ContactSection = () => {
                       <SelectValue placeholder="Select budget range..." />
                     </SelectTrigger>
                     <SelectContent className="bg-brand-gray-light border-brand-gray">
-                      <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                      <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                      <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                      <SelectItem value="50k+">$50,000+</SelectItem>
+                      <SelectItem value="5k-10k">Rs.10,000</SelectItem>
+                      <SelectItem value="10k-25k">Rs.10,000 - Rs.25,000</SelectItem>
+                      <SelectItem value="25k-50k">Rs.25,000 - Rs.50,000</SelectItem>
+                      <SelectItem value="50k+">Rs.50,000+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

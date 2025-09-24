@@ -1,6 +1,6 @@
 import { Share2, Code, PieChart, Video } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
+import pic from './visua.jpeg'
 const ServicesSection = () => {
   const services = [
     {
@@ -20,11 +20,11 @@ const ServicesSection = () => {
       alt: "Web development workspace"
     },
     {
-      id: "infographics",
-      title: "Infographics",
+      id: "Visual Branding Identity",
+      title: "Visual Branding Identity",
       description: "Data visualization and information design that transforms complex data into compelling visual stories.",
       icon: PieChart,
-      image: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+      image:pic,
       alt: "Infographic design examples"
     },
     {

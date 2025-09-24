@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
@@ -6,8 +6,19 @@ import PortfolioSection from "@/components/portfolio-section";
 import AboutSection from "@/components/about-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import LogoAnimation from '../components/abc'
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Hide animation after 4 seconds (or when your app finishes loading)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
   useEffect(() => {
     // Scroll-triggered animations
     const observerOptions = {
@@ -49,15 +60,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-black text-white">
+    <div className="App">
+      {isLoading ? <LogoAnimation /> :<div className="min-h-screen bg-brand-black text-white">
       <Navigation />
       <HeroSection />
       <ServicesSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       <AboutSection />
       <ContactSection />
       <Footer />
+    </div>}
     </div>
+    
   );
 };
 

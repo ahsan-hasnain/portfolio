@@ -43,10 +43,10 @@ const Footer = () => {
   };
 
   const services = [
-    "Social Media Management",
+    "Social Media Handling",
+    "Content Production",
     "Web Development", 
-    "Infographics",
-    "Video Editing"
+    "Visual Branding Identity",
   ];
 
   const companyLinks = [
@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="text-2xl font-bold text-brand-gold mb-4">
-              CreativeFlow
+              ZENTIX
             </div>
             <p className="text-gray-400 text-sm">
               Transforming brands through innovative digital solutions and creative excellence.
@@ -127,7 +127,7 @@ const Footer = () => {
         
         <div className="border-t border-brand-gray pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 CreativeFlow Agency. All rights reserved.
+            © 2025 ZENTIX Agency. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
             {legalLinks.map((link) => (
